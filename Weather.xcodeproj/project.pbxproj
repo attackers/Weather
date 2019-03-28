@@ -39,6 +39,9 @@
 		34C24CC2224B578500F5C45D /* HttpServiceManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C24CBF224B578500F5C45D /* HttpServiceManage.swift */; };
 		34C24CC3224B578500F5C45D /* HttpSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C24CC0224B578500F5C45D /* HttpSettings.swift */; };
 		34C24CC7224B859400F5C45D /* BeeCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C24CC5224B859400F5C45D /* BeeCustomButton.m */; };
+		34E7F4F6224C5EFC0068E305 /* ProjectBusinessManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E7F4F5224C5EFC0068E305 /* ProjectBusinessManager.swift */; };
+		34E7F4F8224C61A10068E305 /* ProjectClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E7F4F7224C61A10068E305 /* ProjectClassModel.swift */; };
+		34E7F4FA224CAB6F0068E305 /* FiveDayWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E7F4F9224CAB6F0068E305 /* FiveDayWeatherView.swift */; };
 		ABE5A905C9A7D8A6E0EAEEC1 /* Pods_Weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F3A4D89A14E2A9CBB1E7C65 /* Pods_Weather.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +84,9 @@
 		34C24CC0224B578500F5C45D /* HttpSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpSettings.swift; sourceTree = "<group>"; };
 		34C24CC5224B859400F5C45D /* BeeCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeeCustomButton.m; sourceTree = "<group>"; };
 		34C24CC6224B859400F5C45D /* BeeCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeeCustomButton.h; sourceTree = "<group>"; };
+		34E7F4F5224C5EFC0068E305 /* ProjectBusinessManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectBusinessManager.swift; sourceTree = "<group>"; };
+		34E7F4F7224C61A10068E305 /* ProjectClassModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectClassModel.swift; sourceTree = "<group>"; };
+		34E7F4F9224CAB6F0068E305 /* FiveDayWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayWeatherView.swift; sourceTree = "<group>"; };
 		5F3A4D89A14E2A9CBB1E7C65 /* Pods_Weather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74F6FD72397D599FEA67E899 /* Pods-Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather.debug.xcconfig"; path = "Target Support Files/Pods-Weather/Pods-Weather.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +144,9 @@
 				34C24CBE224B578500F5C45D /* HttpAPIEnum.swift */,
 				34C24CBF224B578500F5C45D /* HttpServiceManage.swift */,
 				34C24CC0224B578500F5C45D /* HttpSettings.swift */,
+				34E7F4F5224C5EFC0068E305 /* ProjectBusinessManager.swift */,
+				34E7F4F7224C61A10068E305 /* ProjectClassModel.swift */,
+				34E7F4F9224CAB6F0068E305 /* FiveDayWeatherView.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -352,6 +361,7 @@
 				34C24CC2224B578500F5C45D /* HttpServiceManage.swift in Sources */,
 				34C24CC1224B578500F5C45D /* HttpAPIEnum.swift in Sources */,
 				34C24C97224B4B4400F5C45D /* WriteDiaryViewController.swift in Sources */,
+				34E7F4FA224CAB6F0068E305 /* FiveDayWeatherView.swift in Sources */,
 				34C24C91224B108700F5C45D /* Test.m in Sources */,
 				34C24CC7224B859400F5C45D /* BeeCustomButton.m in Sources */,
 				34C24C8B224B0BED00F5C45D /* Header.swift in Sources */,
@@ -359,6 +369,8 @@
 				34C24C93224B4AD200F5C45D /* AddressViewController.swift in Sources */,
 				34C24C95224B4B0300F5C45D /* DiaryViewController.swift in Sources */,
 				34C24C79224B079900F5C45D /* AppDelegate.swift in Sources */,
+				34E7F4F8224C61A10068E305 /* ProjectClassModel.swift in Sources */,
+				34E7F4F6224C5EFC0068E305 /* ProjectBusinessManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

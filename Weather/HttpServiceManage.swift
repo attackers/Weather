@@ -8,16 +8,18 @@
 
 import UIKit
 import Moya
-extension ZADDHttpAPIEnum {
+extension HttpAPIEnum {
     var task: Task {
         switch self {
-            
-        case .getTodayHistory(_):
-
-            return .requestParameters(parameters:[:], encoding: URLEncoding.queryString)
-            
-        case .getLocalCoordinate(_):
-            return .requestParameters(parameters:[:], encoding: URLEncoding.queryString)
+        case .getTodayHistory(let month,let day):
+            let parameters = ["key":juheHistoryTodayKey,"month":month,"day":day,"v":"1.0"]
+            return .requestParameters(parameters:parameters, encoding: URLEncoding.queryString)
+        case .getTodayHistoryDetail(let e_id):
+            let parameters = ["key":juheHistoryTodayKey,"id":e_id,"v":"1.0"]
+            return .requestParameters(parameters:parameters, encoding: URLEncoding.queryString)
+        case .getWeather(let city):
+            let parameters = ["key":juheWentherKey,"city":city]
+            return .requestParameters(parameters:parameters, encoding: URLEncoding.queryString)
         }
     }
    

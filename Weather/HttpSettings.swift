@@ -9,32 +9,50 @@
 import UIKit
 import Moya
 
-let hostURL = "https://qn.kxdati.cn"
+let todayHistoryURL = "http://api.juheapi.com/japi/toh"
+let weatherURL = "http://apis.juhe.cn/"
 
-
-extension ZADDHttpAPIEnum: TargetType {
+extension HttpAPIEnum: TargetType {
     
     var headers: [String : String]? {
         switch self {
         default:
             return ["Content-Type":"application/json"]
-
         }
     }
     
     var baseURL: URL {
-            return URL(string: hostURL)!
+        switch self {
+        case .getTodayHistory(_):
+            return URL(string: todayHistoryURL)!
+        case .getTodayHistoryDetail(_):
+            return URL(string: todayHistoryURL)!
+        case .getWeather(_):
+            return URL(string: weatherURL)!
+
+        }
     }
     var path: String {
-        return ""
-//
-//        switch self {
-//
-//        }
+        switch self {
+        case .getTodayHistory(_):
+            return ""
+        case .getTodayHistoryDetail(_):
+            return ""
+        case .getWeather(_):
+            return "simpleWeather/query"
+        }
     }
     
     var method: Moya.Method {
-            return .get
+        
+//        switch self {
+//        case .getTodayHistory(_):
+//            return .get
+//        case .getTodayHistoryDetail(_):
+//            return .get
+//        case .getWeather(_):
+            return .post
+//        }
     }
     
     var sampleData: Data {
