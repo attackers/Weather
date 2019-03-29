@@ -22,12 +22,12 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                             <tableView clipsSubviews="YES" alpha="0.59999999999999998" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rzS-9T-W7v">
-                                <rect key="frame" x="24" y="295" width="335" height="319"/>
+                                <rect key="frame" x="24" y="247" width="335" height="400"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lTR-bQ-wwc">
-                                <rect key="frame" x="34" y="131" width="325" height="110"/>
+                                <rect key="frame" x="34" y="83" width="325" height="110"/>
                                 <color key="backgroundColor" red="1" green="0.85297226910000001" blue="0.11313194779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </stackView>
                         </subviews>
@@ -36,12 +36,12 @@
                             <constraint firstItem="lTR-bQ-wwc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="34" id="95t-q8-B0E"/>
                             <constraint firstItem="rzS-9T-W7v" firstAttribute="top" secondItem="lTR-bQ-wwc" secondAttribute="bottom" constant="54" id="BhV-jp-Obq"/>
                             <constraint firstItem="3lw-LB-Ad6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Fa5-Jc-ekP"/>
-                            <constraint firstItem="lTR-bQ-wwc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="67" id="KHo-n0-VpX"/>
+                            <constraint firstItem="lTR-bQ-wwc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="19" id="KHo-n0-VpX"/>
                             <constraint firstItem="lTR-bQ-wwc" firstAttribute="trailing" secondItem="rzS-9T-W7v" secondAttribute="trailing" id="LHh-rL-iwR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rzS-9T-W7v" secondAttribute="bottom" constant="53" id="Zw9-UC-Thl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rzS-9T-W7v" secondAttribute="bottom" constant="20" id="Zw9-UC-Thl"/>
                             <constraint firstItem="rzS-9T-W7v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="mZ2-nZ-Y3A"/>
                             <constraint firstAttribute="trailing" secondItem="3lw-LB-Ad6" secondAttribute="trailing" id="ncH-Qi-Jyh"/>
-                            <constraint firstItem="rzS-9T-W7v" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="231" id="wJT-sg-QD5"/>
+                            <constraint firstItem="rzS-9T-W7v" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="183" id="wJT-sg-QD5"/>
                             <constraint firstItem="3lw-LB-Ad6" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="wkm-24-E70"/>
                             <constraint firstItem="rzS-9T-W7v" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="yDN-UF-oDv"/>
                             <constraint firstItem="3lw-LB-Ad6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yvI-bg-nJj"/>
@@ -50,11 +50,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="晴" id="a3C-ri-OX6">
                         <barButtonItem key="leftBarButtonItem" title="深圳" id="n8Y-64-DEy">
+                            <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                             <connections>
                                 <segue destination="EGc-OO-8dF" kind="push" id="44W-Ea-Cem"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="2019年3月27" id="71I-ff-6WL">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="XKW-Ky-oiB" kind="push" id="7TK-sl-VlN"/>
                             </connections>
@@ -71,7 +73,7 @@
             </objects>
             <point key="canvasLocation" x="976.79999999999995" y="-558.17091454272872"/>
         </scene>
-        <!--2019年3月27-->
+        <!--👣-->
         <scene sceneID="xO4-k2-Now">
             <objects>
                 <viewController id="XKW-Ky-oiB" customClass="DiaryViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
@@ -106,7 +108,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XvM-fN-pDc"/>
                     </view>
-                    <navigationItem key="navigationItem" title="2019年3月27" id="UlX-Op-926">
+                    <navigationItem key="navigationItem" title="👣" id="UlX-Op-926">
                         <barButtonItem key="rightBarButtonItem" title="add" id="la9-Xr-nGb">
                             <connections>
                                 <segue destination="YR4-3F-6qG" kind="push" id="8C2-d5-uGP"/>
@@ -121,7 +123,7 @@
             </objects>
             <point key="canvasLocation" x="1677.5999999999999" y="-856.82158920539734"/>
         </scene>
-        <!--Write Diary View Controller-->
+        <!--挥洒笔墨-->
         <scene sceneID="96v-fo-Xad">
             <objects>
                 <viewController id="YR4-3F-6qG" customClass="WriteDiaryViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
@@ -146,7 +148,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eC4-qA-Nnj"/>
                     </view>
-                    <navigationItem key="navigationItem" id="4eg-dt-QEx">
+                    <navigationItem key="navigationItem" title="挥洒笔墨" id="4eg-dt-QEx">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="8Sd-70-rKH"/>
                     </navigationItem>
                 </viewController>
@@ -154,7 +156,7 @@
             </objects>
             <point key="canvasLocation" x="2293.5999999999999" y="-857.72113943028489"/>
         </scene>
-        <!--Address View Controller-->
+        <!--🏙-->
         <scene sceneID="gs4-65-Zmd">
             <objects>
                 <viewController id="EGc-OO-8dF" customClass="AddressViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
@@ -182,7 +184,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w17-37-cBc"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ceq-T3-k2l"/>
+                    <navigationItem key="navigationItem" title="🏙" id="Ceq-T3-k2l"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="etR-hi-Fde" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -196,6 +198,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YZw-u9-xBR">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
