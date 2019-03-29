@@ -15,15 +15,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var weatherImageView: UIImageView!
     @IBOutlet weak var FiveDayWeather: UIStackView!
     @IBOutlet weak var todayHistory: UITableView!
-    
+    @IBOutlet weak var rightItem: UIBarButtonItem!
     let pManager = ProjectBusinessManager()
     var wModel: WeatherModel?
     var historyList = [TodayHistoryModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupFiveDayWeather()
         setupTodayHistory()
         requestHttp()
+        let dStg = NSDate.date(toString: Date())?.components(separatedBy: " ")
+        self.rightItem.title = dStg?.first
     }
     
     func setupTodayHistory()  {
@@ -35,19 +36,17 @@ class ViewController: UIViewController {
         FiveDayWeather.distribution = .fillProportionally
     }
     
-    func setupFiveDayWeather()  {
+    func setupFiveDayWeather(fList: [FutureModel])  {
 
-        let w = (SCREENWIDTH - 60)/5
-        var x:CGFloat = 10.0
+        let w = (SCREENWIDTH)/5
         for i in 0..<5 {
-            let fView = FiveDayWeatherView(frame: CGRect(x: CGFloat(x), y: FiveDayWeather.frame.minY, width: w, height: FiveDayWeather.frame.height))
+            let fView = FiveDayWeatherView(frame: CGRect(x: CGFloat(i) * w, y: FiveDayWeather.frame.minY, width: w, height: FiveDayWeather.frame.height))
             self.view.addSubview(fView)
+            fView.setContent(model: fList[i])
             if i == 4 {
                fView.line.isHidden = true
             }
-            x = x + CGFloat(fView.frame.width) + 10.0
         }
-
     }
     
     func requestHttp()  {
@@ -56,15 +55,19 @@ class ViewController: UIViewController {
             let img =   self.retureBackImageKey(self.wModel!.info!)
             DispatchQueue.main.async {
                 self.weatherImageView.image = UIImage(named: img)
-                self.title = self.wModel!.info!
+                let m = self.wModel?.future.first
+                self.title = m?.weather
+                self.weatherImageView.image = UIImage(named: self.retureBackImageKey((m?.weather)!))
+                self.setupFiveDayWeather(fList: (self.wModel?.future)!)
             }
-            let index = (weatherIcons as NSArray).index(of: "小雪")
             
         }) { (error) in
             self.view.makeToast(error as? String)
         }
+        let dStg = NSDate.date(toString: Date())?.components(separatedBy: " ")
+        let tStg = dStg?.first?.components(separatedBy: "-")
         
-        pManager.getTodayHistory(month: "3", day: "29",  success: { (json) in
+        pManager.getTodayHistory(month: tStg![1], day: tStg![2],  success: { (json) in
             let list = json.array
             _ = list?.map({ (objc)in
                 let hModel = TodayHistoryModel(result: objc)

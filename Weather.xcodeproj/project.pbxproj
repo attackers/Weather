@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34B0E76C224E114D00C1C25F /* NSObject+CustomDateFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B0E76B224E114D00C1C25F /* NSObject+CustomDateFunction.m */; };
 		34C24C79224B079900F5C45D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C24C78224B079900F5C45D /* AppDelegate.swift */; };
 		34C24C7B224B079900F5C45D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C24C7A224B079900F5C45D /* ViewController.swift */; };
 		34C24C7E224B079900F5C45D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34C24C7C224B079900F5C45D /* Main.storyboard */; };
@@ -47,6 +48,8 @@
 
 /* Begin PBXFileReference section */
 		246A4E470AEF610CAD1801CE /* Pods-Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather.release.xcconfig"; path = "Target Support Files/Pods-Weather/Pods-Weather.release.xcconfig"; sourceTree = "<group>"; };
+		34B0E76A224E114C00C1C25F /* NSObject+CustomDateFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CustomDateFunction.h"; sourceTree = "<group>"; };
+		34B0E76B224E114D00C1C25F /* NSObject+CustomDateFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CustomDateFunction.m"; sourceTree = "<group>"; };
 		34C24C75224B079900F5C45D /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C24C78224B079900F5C45D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34C24C7A224B079900F5C45D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +157,8 @@
 		34C24C9D224B513600F5C45D /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				34B0E76A224E114C00C1C25F /* NSObject+CustomDateFunction.h */,
+				34B0E76B224E114D00C1C25F /* NSObject+CustomDateFunction.m */,
 				34C24C9E224B513600F5C45D /* DIN-MediumAlternate.otf */,
 				34C24C9F224B513600F5C45D /* DIN-BlackAlternate.otf */,
 				34C24CA0224B513600F5C45D /* zadd_cityTree.plist */,
@@ -363,6 +368,7 @@
 				34C24C97224B4B4400F5C45D /* WriteDiaryViewController.swift in Sources */,
 				34E7F4FA224CAB6F0068E305 /* FiveDayWeatherView.swift in Sources */,
 				34C24C91224B108700F5C45D /* Test.m in Sources */,
+				34B0E76C224E114D00C1C25F /* NSObject+CustomDateFunction.m in Sources */,
 				34C24CC7224B859400F5C45D /* BeeCustomButton.m in Sources */,
 				34C24C8B224B0BED00F5C45D /* Header.swift in Sources */,
 				34C24C9B224B4C9100F5C45D /* DiaryTableViewCell.swift in Sources */,

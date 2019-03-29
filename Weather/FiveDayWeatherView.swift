@@ -68,7 +68,6 @@ class FiveDayWeatherView: UIView {
     func setSubProperty()  {
         
         iconImageView.contentMode = .scaleAspectFit
-        iconImageView.backgroundColor = UIColor.red
         
         dateLabel.font = UIFont(name: "DIN-BoldAlternate", size: 13)
         dateLabel.textColor = UIColor("#07090C")
@@ -87,7 +86,19 @@ class FiveDayWeatherView: UIView {
 
         line.backgroundColor = UIColor.groupTableViewBackground
     }
-    
+    func setContent(model: FutureModel) {
+        let wStg = model.weather?.components(separatedBy: "转")
+        let index = (weatherIcons as NSArray).index(of: wStg?.last as Any)
+        let stg = String(format: "http://www.weather.com.cn/m/i/icon_weather/42x30/d%02d.gif",index)
+        iconImageView.sd_setImage(with: URL(string: stg)) { (img, error, type, url) in
+            DispatchQueue.main.async {
+                self.iconImageView.image = img
+            }
+        }
+        wLabel.text = model.weather
+        dateLabel.text = model.date
+        tLabel.text = model.temperature        
+    }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

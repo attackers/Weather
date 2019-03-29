@@ -62,6 +62,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="FiveDayWeather" destination="lTR-bQ-wwc" id="EhH-Cr-Uv3"/>
+                        <outlet property="rightItem" destination="71I-ff-6WL" id="DVS-sX-aIO"/>
                         <outlet property="todayHistory" destination="rzS-9T-W7v" id="Boe-Tr-qeT"/>
                         <outlet property="weatherImageView" destination="3lw-LB-Ad6" id="sYg-Lp-m8s"/>
                     </connections>
