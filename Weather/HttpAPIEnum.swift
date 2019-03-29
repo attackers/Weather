@@ -8,7 +8,8 @@
 
 import UIKit
 
-enum ZADDHttpAPIEnum {
-    case getTodayHistory(_ city: String)
-    case getLocalCoordinate(_ name: String)
+enum HttpAPIEnum {
+    case getWeather(_ city:String)
+    case getTodayHistory(_ month: String,_ day: String)
+    case getTodayHistoryDetail(_ id: String)
 }
