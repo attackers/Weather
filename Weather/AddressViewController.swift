@@ -9,50 +9,72 @@
 import UIKit
 import MapKit
 class AddressViewController: UIViewController {
-    var location: CLLocationCoordinate2D?
-    let lManager = LocationManager()
-    @IBOutlet weak var mapview: MKMapView!
-    @IBOutlet weak var searchBar: UISearchBar!
+    
+    @IBOutlet weak var tableview: UITableView!
+    var list:NSDictionary?
+    var city: String?
     
     override  func viewDidLoad() {
         super.viewDidLoad()
-        
-        mapview.mapType = .standard
-        mapview.userTrackingMode = .followWithHeading
-        mapview.delegate = self
-        searchBar.delegate = self
-        mapview.isZoomEnabled = true
-        
+        let path = Bundle.main.path(forResource: "zadd_cityTree.plist", ofType: "")
+        list = NSDictionary(contentsOfFile: path!)
+        tableview.delegate = self
+        tableview.dataSource = self
+        tableview.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCellSelf")
+        self.title = "城市"
     }
     @IBAction func backItem(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
 
     }
+    
+    
 }
-extension AddressViewController: MKMapViewDelegate,UISearchBarDelegate {
-    func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
-        mapview.setCenter(self.location!, animated: true)
-        var region = mapview.region
-        region.span.latitudeDelta =  0.01
-        region.span.longitudeDelta =  0.01
-        region.center  = self.location!
-        mapview.setRegion(region, animated: true)
-        mapView.showsUserLocation = true
+extension AddressViewController: UITableViewDelegate,UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return (list?.count)!
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let key = list?.allKeys[section]  as! String
+        let info = list![key] as? NSArray
+        let l = info?.firstObject as? NSDictionary
+        return (l?.allKeys.count)!
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableview.dequeueReusableCell(withIdentifier: "UITableViewCellSelf")
+        let key = list?.allKeys[indexPath.section]  as! String
+        let info = list![key] as! NSArray
+        let l = info.firstObject as? NSDictionary
+        let k  = l?.allKeys[indexPath.row] as! String
+        cell?.textLabel?.text = k
+        return cell!
     }
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        lManager.cityToLocationCoordinate2D(city: searchBar.text! as String) { coordinate2D in
-            DispatchQueue.main.async {
-                self.location = coordinate2D
-                var region = self.mapview.region
-                region.span.latitudeDelta =  0.01
-                region.span.longitudeDelta = 0.01
-                region.center  = self.location!
-                self.mapview.setRegion(region, animated: true)
-
-            }
-        }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 36
     }
 
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.1
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let v = UIView(frame: CGRect(x: 0, y: 0, width: SCREENWIDTH - 18, height: 36))
+        let label = UILabel(frame: CGRect(x: 18, y: 0, width: SCREENWIDTH - 18, height: 36))
+        let key = list?.allKeys[section]  as! String
+        label.text = key
+        label.font = UIFont(name: "DIN-BlackAlternate", size: 19)
+        v.addSubview(label)
+        return v
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let key = list?.allKeys[indexPath.section]  as! String
+        let info = list![key] as! NSArray
+        let l = info.firstObject as? NSDictionary
+        let k  = l?.allKeys[indexPath.row] as! String
+        city = k
+        self.navigationController?.popViewController(animated: true)
+    }
 }

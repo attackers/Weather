@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14507CB12254EA6600165056 /* TodayHistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14507CB02254EA6600165056 /* TodayHistoryDetailViewController.swift */; };
 		34016F5D22549A5100247A46 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34016F5C22549A5100247A46 /* LocationManager.swift */; };
 		34016F5F22549DB900247A46 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34016F5E22549DB900247A46 /* MapKit.framework */; };
 		34B0E76C224E114D00C1C25F /* NSObject+CustomDateFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B0E76B224E114D00C1C25F /* NSObject+CustomDateFunction.m */; };
@@ -49,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14507CB02254EA6600165056 /* TodayHistoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayHistoryDetailViewController.swift; sourceTree = "<group>"; };
 		246A4E470AEF610CAD1801CE /* Pods-Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather.release.xcconfig"; path = "Target Support Files/Pods-Weather/Pods-Weather.release.xcconfig"; sourceTree = "<group>"; };
 		34016F5C22549A5100247A46 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		34016F5E22549DB900247A46 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -135,6 +137,7 @@
 		34C24C77224B079900F5C45D /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				34C24CA0224B513600F5C45D /* zadd_cityTree.plist */,
 				34C24CC4224B859400F5C45D /* BeeCustom */,
 				34C24C9D224B513600F5C45D /* Source */,
 				34C24C78224B079900F5C45D /* AppDelegate.swift */,
@@ -144,6 +147,7 @@
 				34C24C81224B079A00F5C45D /* LaunchScreen.storyboard */,
 				34C24C84224B079A00F5C45D /* Info.plist */,
 				34C24C8A224B0BED00F5C45D /* Header.swift */,
+				14507CB02254EA6600165056 /* TodayHistoryDetailViewController.swift */,
 				34C24C92224B4AD200F5C45D /* AddressViewController.swift */,
 				34C24C94224B4B0300F5C45D /* DiaryViewController.swift */,
 				34C24C96224B4B4400F5C45D /* WriteDiaryViewController.swift */,
@@ -167,7 +171,6 @@
 				34B0E76B224E114D00C1C25F /* NSObject+CustomDateFunction.m */,
 				34C24C9E224B513600F5C45D /* DIN-MediumAlternate.otf */,
 				34C24C9F224B513600F5C45D /* DIN-BlackAlternate.otf */,
-				34C24CA0224B513600F5C45D /* zadd_cityTree.plist */,
 				34C24CA1224B513600F5C45D /* DIN-RegularAlternate.otf */,
 				34C24CA2224B513600F5C45D /* DIN-Medium.otf */,
 				34C24CA3224B513600F5C45D /* DIN-BoldAlternate.otf */,
@@ -387,6 +390,7 @@
 				34C24C9B224B4C9100F5C45D /* DiaryTableViewCell.swift in Sources */,
 				34C24C93224B4AD200F5C45D /* AddressViewController.swift in Sources */,
 				34C24C95224B4B0300F5C45D /* DiaryViewController.swift in Sources */,
+				14507CB12254EA6600165056 /* TodayHistoryDetailViewController.swift in Sources */,
 				34C24C79224B079900F5C45D /* AppDelegate.swift in Sources */,
 				34E7F4F8224C61A10068E305 /* ProjectClassModel.swift in Sources */,
 				34E7F4F6224C5EFC0068E305 /* ProjectBusinessManager.swift in Sources */,
