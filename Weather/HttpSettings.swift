@@ -26,7 +26,7 @@ extension HttpAPIEnum: TargetType {
         case .getTodayHistory(_):
             return URL(string: todayHistoryURL)!
         case .getTodayHistoryDetail(_):
-            return URL(string: todayHistoryURL)!
+            return URL(string: "http://api.juheapi.com/japi/tohdet")!
         case .getWeather(_):
             return URL(string: weatherURL)!
 

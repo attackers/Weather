@@ -114,6 +114,12 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource {
         cell.contentLabel.text = m.des
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let m = historyList[indexPath.row]
+        let uid = m.id
+        let tDetail = TodayHistoryDetailViewController()
+        tDetail.uid = uid
+        self.navigationController?.pushViewController(tDetail, animated: true)
+    }
     
 }

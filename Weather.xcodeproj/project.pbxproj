@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14CE17DC22525ADA0097D223 /* TodayHistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CE17DB22525ADA0097D223 /* TodayHistoryDetailViewController.swift */; };
 		34B0E76C224E114D00C1C25F /* NSObject+CustomDateFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B0E76B224E114D00C1C25F /* NSObject+CustomDateFunction.m */; };
 		34C24C79224B079900F5C45D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C24C78224B079900F5C45D /* AppDelegate.swift */; };
 		34C24C7B224B079900F5C45D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C24C7A224B079900F5C45D /* ViewController.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14CE17DB22525ADA0097D223 /* TodayHistoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHistoryDetailViewController.swift; sourceTree = "<group>"; };
 		246A4E470AEF610CAD1801CE /* Pods-Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather.release.xcconfig"; path = "Target Support Files/Pods-Weather/Pods-Weather.release.xcconfig"; sourceTree = "<group>"; };
 		34B0E76A224E114C00C1C25F /* NSObject+CustomDateFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CustomDateFunction.h"; sourceTree = "<group>"; };
 		34B0E76B224E114D00C1C25F /* NSObject+CustomDateFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CustomDateFunction.m"; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				34E7F4F5224C5EFC0068E305 /* ProjectBusinessManager.swift */,
 				34E7F4F7224C61A10068E305 /* ProjectClassModel.swift */,
 				34E7F4F9224CAB6F0068E305 /* FiveDayWeatherView.swift */,
+				14CE17DB22525ADA0097D223 /* TodayHistoryDetailViewController.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14CE17DC22525ADA0097D223 /* TodayHistoryDetailViewController.swift in Sources */,
 				34C24C99224B4B8E00F5C45D /* TodayHistoryTableViewCell.swift in Sources */,
 				34C24CC3224B578500F5C45D /* HttpSettings.swift in Sources */,
 				34C24C7B224B079900F5C45D /* ViewController.swift in Sources */,
