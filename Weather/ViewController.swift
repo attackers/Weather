@@ -9,20 +9,30 @@
 import UIKit
 import SDWebImage
 import Toast_Swift
-
+import MapKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var weatherImageView: UIImageView!
     @IBOutlet weak var FiveDayWeather: UIStackView!
     @IBOutlet weak var todayHistory: UITableView!
     @IBOutlet weak var rightItem: UIBarButtonItem!
+    
+    @IBOutlet weak var leftItem: UIBarButtonItem!
     let pManager = ProjectBusinessManager()
     var wModel: WeatherModel?
     var historyList = [TodayHistoryModel]()
+    let sam = DispatchSemaphore(value: 1)
+    let group = DispatchGroup()
+    let queue = DispatchQueue.init(label: "semaphore")
+    let model = LocationManager()
+    var city = "深圳"
+    var location2D: CLLocationCoordinate2D?
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTodayHistory()
         requestHttp()
+        getLocationAuther()
+        
         let dStg = NSDate.date(toString: Date())?.components(separatedBy: " ")
         self.rightItem.title = dStg?.first
     }
@@ -50,35 +60,46 @@ class ViewController: UIViewController {
     }
     
     func requestHttp()  {
-        pManager.getWeather(city: "深圳", success: { (json) in
-            self.wModel = WeatherModel(result: json)
-            let img =   self.retureBackImageKey(self.wModel!.info!)
-            DispatchQueue.main.async {
-                self.weatherImageView.image = UIImage(named: img)
-                let m = self.wModel?.future.first
-                self.title = m?.weather
-                self.weatherImageView.image = UIImage(named: self.retureBackImageKey((m?.weather)!))
-                self.setupFiveDayWeather(fList: (self.wModel?.future)!)
+        queue.async(group: group, qos: DispatchQoS.default, flags: []) {
+            self.sam.wait()
+            self.pManager.getWeather(city: self.city, success: { (json) in
+                self.wModel = WeatherModel(result: json)
+                let img = self.retureBackImageKey(self.wModel!.info!)
+                DispatchQueue.main.async {
+                    self.weatherImageView.image = UIImage(named: img)
+                    let m = self.wModel?.future.first
+                    self.title = m?.weather
+                    self.weatherImageView.image = UIImage(named: self.retureBackImageKey((m?.weather)!))
+                    self.setupFiveDayWeather(fList: (self.wModel?.future)!)
+                }
+                self.sam.signal()
+                print("一次执行")
+
+            }) { (error) in
+                self.view.makeToast(error as? String)
             }
-            
-        }) { (error) in
-            self.view.makeToast(error as? String)
         }
-        let dStg = NSDate.date(toString: Date())?.components(separatedBy: " ")
-        let tStg = dStg?.first?.components(separatedBy: "-")
+       
+        queue.async(group: group, qos: DispatchQoS.default, flags: []) {
+            self.sam.wait()
+            print("二次等待执行开始")
+            let dStg = NSDate.date(toString: Date())?.components(separatedBy: " ")
+            let tStg = dStg?.first?.components(separatedBy: "-")
+            
+            self.pManager.getTodayHistory(month: tStg![1], day: tStg![2],  success: { (json) in
+                let list = json.array
+                _ = list?.map({ (objc)in
+                    let hModel = TodayHistoryModel(result: objc)
+                    self.historyList.append(hModel)
+                })
+                DispatchQueue.main.async {
+                    self.todayHistory.reloadData()
+                }
+            }) { (error) in
+                
+            }
+        }
         
-        pManager.getTodayHistory(month: tStg![1], day: tStg![2],  success: { (json) in
-            let list = json.array
-            _ = list?.map({ (objc)in
-                let hModel = TodayHistoryModel(result: objc)
-                self.historyList.append(hModel)
-            })
-            DispatchQueue.main.async {
-                self.todayHistory.reloadData()
-            }
-        }) { (error) in
-            
-        }
     }
     
     func retureBackImageKey(_ key: String) -> String {
@@ -97,6 +118,38 @@ class ViewController: UIViewController {
             return "阴天"
         }
     }
+    
+    fileprivate func getLocationAuther() {
+        model.locationBlock = { city,location2D  in
+            DispatchQueue.main.async {
+                self.leftItem.title = city
+                self.city = city
+                self.location2D = location2D
+            }
+        }
+        switch model.getLocationStatus() {
+        case .denied,.restricted:
+            let aler = UIAlertController(title: nil, message: "点滴生活需要使用您的定位功能，是否开启", preferredStyle: .alert)
+            let action1 = UIAlertAction(title: "好的", style: .default) { (_) in
+                if UIApplication.shared.canOpenURL(URL(string: UIApplication.openSettingsURLString)!) {
+                    UIApplication.shared.openURL(URL(string: UIApplication.openSettingsURLString)!)
+                }
+            }
+            let action2 = UIAlertAction(title: "取消", style: .default) { (_) in}
+            aler.addAction(action1)
+            aler.addAction(action2)
+            self.present(aler, animated: true, completion: nil)
+        default:break
+        }
+    }
+  
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let sVC = segue.destination
+        if sVC.classForCoder == AddressViewController.classForCoder() {
+            let aVC = sVC as! AddressViewController
+            aVC.location = self.location2D
+        }
+    }
 }
 
 extension ViewController: UITableViewDelegate,UITableViewDataSource {
@@ -113,13 +166,6 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource {
         cell.titleLabel.text = String(format: "%@/%@/%@", m.year!,m.month!,m.day!)
         cell.contentLabel.text = m.des
         return cell
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let m = historyList[indexPath.row]
-        let uid = m.id
-        let tDetail = TodayHistoryDetailViewController()
-        tDetail.uid = uid
-        self.navigationController?.pushViewController(tDetail, animated: true)
     }
     
 }

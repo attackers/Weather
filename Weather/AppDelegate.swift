@@ -15,18 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//        let macth = "^([a-zA-Z]{1,}[0-9]{1,})|^([0-9]{1,}[A-Za-z]{1,})"
-//
-//        let pwd = "W1w2w"
-//
-//
-//        do {
-//            let regex =  try NSRegularExpression(pattern: macth, options: .caseInsensitive)
-//            let res = regex.matches(in: pwd, options: .init(rawValue: 0), range: NSRange(location: 0, length: pwd.count))
-//            print(res.count)
-//        } catch  {
-//
-//        }
+
         // Override point for customization after application launch.
         return true
     }
