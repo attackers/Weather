@@ -16,7 +16,10 @@ class WriteDiaryViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func backItem(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

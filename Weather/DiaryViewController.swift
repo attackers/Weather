@@ -19,6 +19,9 @@ class DiaryViewController: UIViewController {
         diaryListTableview.register(DiaryTableViewCell.self, forCellReuseIdentifier: "DiaryTableViewCell")
     }
     
+    @IBAction func backItem(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 extension DiaryViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

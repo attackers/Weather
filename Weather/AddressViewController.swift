@@ -7,24 +7,52 @@
 //
 
 import UIKit
-
+import MapKit
 class AddressViewController: UIViewController {
-
-    override func viewDidLoad() {
+    var location: CLLocationCoordinate2D?
+    let lManager = LocationManager()
+    @IBOutlet weak var mapview: MKMapView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    override  func viewDidLoad() {
         super.viewDidLoad()
+        
+        mapview.mapType = .standard
+        mapview.userTrackingMode = .followWithHeading
+        mapview.delegate = self
+        searchBar.delegate = self
+        mapview.isZoomEnabled = true
+        
+    }
+    @IBAction func backItem(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
 
-        // Do any additional setup after loading the view.
+    }
+}
+extension AddressViewController: MKMapViewDelegate,UISearchBarDelegate {
+    func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
+        mapview.setCenter(self.location!, animated: true)
+        var region = mapview.region
+        region.span.latitudeDelta =  0.01
+        region.span.longitudeDelta =  0.01
+        region.center  = self.location!
+        mapview.setRegion(region, animated: true)
+        mapView.showsUserLocation = true
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        lManager.cityToLocationCoordinate2D(city: searchBar.text! as String) { coordinate2D in
+            DispatchQueue.main.async {
+                self.location = coordinate2D
+                var region = self.mapview.region
+                region.span.latitudeDelta =  0.01
+                region.span.longitudeDelta = 0.01
+                region.center  = self.location!
+                self.mapview.setRegion(region, animated: true)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+            }
+        }
     }
-    */
 
 }

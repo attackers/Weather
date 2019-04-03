@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OP0-Cc-Zke">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OP0-Cc-Zke">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -51,7 +51,7 @@
                     <navigationItem key="navigationItem" title="晴" id="a3C-ri-OX6">
                         <barButtonItem key="leftBarButtonItem" title="深圳" id="n8Y-64-DEy">
                             <connections>
-                                <segue destination="EGc-OO-8dF" kind="push" id="44W-Ea-Cem"/>
+                                <segue destination="EGc-OO-8dF" kind="push" identifier="pushToLocation" id="44W-Ea-Cem"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="2019年3月27" id="71I-ff-6WL">
@@ -62,6 +62,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="FiveDayWeather" destination="lTR-bQ-wwc" id="EhH-Cr-Uv3"/>
+                        <outlet property="leftItem" destination="n8Y-64-DEy" id="eWe-rI-pQW"/>
                         <outlet property="rightItem" destination="71I-ff-6WL" id="DVS-sX-aIO"/>
                         <outlet property="todayHistory" destination="rzS-9T-W7v" id="Boe-Tr-qeT"/>
                         <outlet property="weatherImageView" destination="3lw-LB-Ad6" id="sYg-Lp-m8s"/>
@@ -69,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="976.79999999999995" y="-558.17091454272872"/>
+            <point key="canvasLocation" x="838" y="-618"/>
         </scene>
         <!--2019年3月27-->
         <scene sceneID="xO4-k2-Now">
@@ -107,6 +108,11 @@
                         <viewLayoutGuide key="safeArea" id="XvM-fN-pDc"/>
                     </view>
                     <navigationItem key="navigationItem" title="2019年3月27" id="UlX-Op-926">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="zadd_navigation_left_btn" id="qTp-Xh-hRo">
+                            <connections>
+                                <action selector="backItem:" destination="XKW-Ky-oiB" id="8cM-He-5fl"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="add" id="la9-Xr-nGb">
                             <connections>
                                 <segue destination="YR4-3F-6qG" kind="push" id="8C2-d5-uGP"/>
@@ -147,6 +153,11 @@
                         <viewLayoutGuide key="safeArea" id="eC4-qA-Nnj"/>
                     </view>
                     <navigationItem key="navigationItem" id="4eg-dt-QEx">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="zadd_navigation_left_btn" id="LLG-W3-1rj">
+                            <connections>
+                                <action selector="backItem:" destination="YR4-3F-6qG" id="0CW-bx-Hwf"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="8Sd-70-rKH"/>
                     </navigationItem>
                 </viewController>
@@ -182,18 +193,28 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w17-37-cBc"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ceq-T3-k2l"/>
+                    <navigationItem key="navigationItem" id="Ceq-T3-k2l">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="zadd_navigation_left_btn" id="3yU-sW-m08">
+                            <connections>
+                                <action selector="backItem:" destination="EGc-OO-8dF" id="Gkr-5b-i9i"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapview" destination="llY-G0-J4E" id="1wX-zP-ELR"/>
+                        <outlet property="searchBar" destination="tTX-m7-6jG" id="Ko2-sB-qlu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="etR-hi-Fde" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1593" y="-199"/>
+            <point key="canvasLocation" x="1642" y="-199"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9iG-8o-xoV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OP0-Cc-Zke" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YZw-u9-xBR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="zadd_navigation_left_btn" id="YZw-u9-xBR">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -204,10 +225,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y3Z-WT-g1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="176.80000000000001" y="-564.46776611694156"/>
+            <point key="canvasLocation" x="220" y="-558"/>
         </scene>
     </scenes>
     <resources>
+        <image name="zadd_navigation_left_btn" width="20" height="20"/>
         <image name="晴天" width="640" height="960"/>
     </resources>
 </document>
