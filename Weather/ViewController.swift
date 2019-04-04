@@ -147,7 +147,6 @@ class ViewController: UIViewController {
         let sVC = segue.destination
         if sVC.classForCoder == AddressViewController.classForCoder() {
             let aVC = sVC as! AddressViewController
-            aVC.location = self.location2D
         }
     }
 }
@@ -166,6 +165,12 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource {
         cell.titleLabel.text = String(format: "%@/%@/%@", m.year!,m.month!,m.day!)
         cell.contentLabel.text = m.des
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let m = historyList[indexPath.row]
+        let tVC = TodayHistoryDetailViewController()
+        tVC.uid = m.id
+        self.navigationController?.pushViewController(tVC, animated: true)
     }
     
 }

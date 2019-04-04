@@ -66,7 +66,7 @@ struct TodayHistoryModel {
         month = result["month"].stringValue
         des = result["des"].stringValue
         title = result["title"].stringValue
-        id = result["id"].stringValue
+        id = result["_id"].stringValue
         pic = result["pic"].stringValue
 
     }

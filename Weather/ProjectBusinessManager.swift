@@ -49,4 +49,24 @@ class ProjectBusinessManager: NSObject {
             }
         }
     }
+    
+    func getTodayHistoryDetail(uid: String,success: @escaping  Success,Fail fail: @escaping Fail)  {
+        provider.request(.getTodayHistoryDetail(uid)) {
+            switch $0 {
+            case .failure(let error):
+                fail(error.errorDescription as Any)
+            case .success(let response):
+                let json = JSON(response.data)
+                let code = json["error_code"].stringValue
+                if code == "0" {
+                    let result = json["result"]
+                    success(result)
+                } else {
+                    let reason = json["reason"].stringValue
+                    fail(reason)
+                }
+                print(json)
+            }
+        }
+    }
 }
