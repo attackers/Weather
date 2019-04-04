@@ -68,6 +68,16 @@ struct TodayHistoryModel {
         title = result["title"].stringValue
         id = result["_id"].stringValue
         pic = result["pic"].stringValue
+    }
+}
 
+class UserCurrentModel: NSObject {
+    static let share = UserCurrentModel()
+    var city = ""
+    var date = ""
+    var weather = ""
+    
+    override init() {
+        super.init()
     }
 }

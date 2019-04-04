@@ -45,7 +45,7 @@ class ProjectBusinessManager: NSObject {
                     let reason = json["reason"].stringValue
                     fail(reason)
                 }
-                print(json)
+//                print(json)
             }
         }
     }
@@ -69,4 +69,32 @@ class ProjectBusinessManager: NSObject {
             }
         }
     }
+    
+    func  getUserDiary() -> [Any] {
+        guard let list = UserDefaults.standard.array(forKey: DIARYKEY) else {
+            return []
+        }
+        
+        return list
+    }
+    func setObjcUserDiary(obj: [String: String],replace: Bool,_ index: NSInteger = 0) {
+        guard var uDe = UserDefaults.standard.array(forKey: DIARYKEY) else {
+            UserDefaults.standard.set([obj], forKey: DIARYKEY)
+            return
+        }
+        if replace {
+            uDe[index] = obj
+        } else {
+            uDe.append(obj)
+        }
+        UserDefaults.standard.set(uDe, forKey: DIARYKEY)
+    }
+    
+}
+
+protocol ProjectDelegate {
+    func didSelectCity(city: String)
+}
+extension ProjectDelegate {
+    func didSelectCity(city: String) {}
 }

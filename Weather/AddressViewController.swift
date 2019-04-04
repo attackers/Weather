@@ -12,8 +12,7 @@ class AddressViewController: UIViewController {
     
     @IBOutlet weak var tableview: UITableView!
     var list:NSDictionary?
-    var city: String?
-    
+    var delegate: ProjectDelegate?
     override  func viewDidLoad() {
         super.viewDidLoad()
         let path = Bundle.main.path(forResource: "zadd_cityTree.plist", ofType: "")
@@ -25,10 +24,7 @@ class AddressViewController: UIViewController {
     }
     @IBAction func backItem(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
-
     }
-    
-    
 }
 extension AddressViewController: UITableViewDelegate,UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -74,7 +70,9 @@ extension AddressViewController: UITableViewDelegate,UITableViewDataSource {
         let info = list![key] as! NSArray
         let l = info.firstObject as? NSDictionary
         let k  = l?.allKeys[indexPath.row] as! String
-        city = k
+        if self.delegate != nil {
+            self.delegate?.didSelectCity(city: k)
+        }
         self.navigationController?.popViewController(animated: true)
     }
 }

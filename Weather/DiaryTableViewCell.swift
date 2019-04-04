@@ -15,7 +15,7 @@ class DiaryTableViewCell: UITableViewCell {
     let weatherLabel = UILabel()
     let addressLabel = UILabel()
     let contentLabel = UILabel()
-    
+    let shadowLabel = UILabel()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubView()
@@ -23,6 +23,7 @@ class DiaryTableViewCell: UITableViewCell {
         setSubProperty()
     }
     func addSubView()  {
+        addSubview(shadowLabel)
         addSubview(dateLabel)
         addSubview(weatherLabel)
         addSubview(addressLabel)
@@ -30,6 +31,9 @@ class DiaryTableViewCell: UITableViewCell {
     }
     
     func setSubViewSnp()  {
+        shadowLabel.snp.makeConstraints {
+            $0.edges.equalTo(UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5))
+        }
         dateLabel.snp.makeConstraints {
             $0.top.left.equalTo(10)
             $0.height.equalTo(20)
@@ -49,12 +53,20 @@ class DiaryTableViewCell: UITableViewCell {
         contentLabel.snp.makeConstraints {
             $0.top.equalTo(dateLabel.snp.bottom)
             $0.left.equalTo(10)
-            $0.height.equalTo(90)
+            $0.height.equalTo(60)
             $0.width.equalTo(SCREENWIDTH - 20)
         }
     }
     
     func setSubProperty()  {
+        shadowLabel.layer.borderWidth = 1
+        shadowLabel.layer.borderColor = UIColor.groupTableViewBackground.cgColor
+        shadowLabel.layer.cornerRadius = 8
+        shadowLabel.layer.shadowOpacity = 1
+        shadowLabel.layer.shadowOffset = CGSize(width: 5, height: -5)
+        shadowLabel.layer.shadowRadius = 6
+        shadowLabel.layer.masksToBounds = true
+        
         dateLabel.font = UIFont(name: "DIN-BoldAlternate", size: 13)
         dateLabel.textColor = UIColor("#07090C")
         dateLabel.text = "2019.3.27"

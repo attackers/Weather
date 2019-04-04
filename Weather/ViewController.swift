@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var FiveDayWeather: UIStackView!
     @IBOutlet weak var todayHistory: UITableView!
     @IBOutlet weak var rightItem: UIBarButtonItem!
-    
     @IBOutlet weak var leftItem: UIBarButtonItem!
     let pManager = ProjectBusinessManager()
     var wModel: WeatherModel?
@@ -35,6 +34,7 @@ class ViewController: UIViewController {
         
         let dStg = NSDate.date(toString: Date())?.components(separatedBy: " ")
         self.rightItem.title = dStg?.first
+        UserCurrentModel.share.date = dStg!.first!
     }
     
     func setupTodayHistory()  {
@@ -47,12 +47,17 @@ class ViewController: UIViewController {
     }
     
     func setupFiveDayWeather(fList: [FutureModel])  {
-
+        for i in 0..<5 {
+            let v = self.view.viewWithTag(1000 + i)
+            v?.removeFromSuperview()
+        }
+        
         let w = (SCREENWIDTH)/5
         for i in 0..<5 {
             let fView = FiveDayWeatherView(frame: CGRect(x: CGFloat(i) * w, y: FiveDayWeather.frame.minY, width: w, height: FiveDayWeather.frame.height))
             self.view.addSubview(fView)
             fView.setContent(model: fList[i])
+            fView.tag = 1000 + i
             if i == 4 {
                fView.line.isHidden = true
             }
@@ -60,6 +65,7 @@ class ViewController: UIViewController {
     }
     
     func requestHttp()  {
+        UserCurrentModel.share.city = self.city
         queue.async(group: group, qos: DispatchQoS.default, flags: []) {
             self.sam.wait()
             self.pManager.getWeather(city: self.city, success: { (json) in
@@ -69,6 +75,7 @@ class ViewController: UIViewController {
                     self.weatherImageView.image = UIImage(named: img)
                     let m = self.wModel?.future.first
                     self.title = m?.weather
+                    UserCurrentModel.share.weather = (m?.weather)!
                     self.weatherImageView.image = UIImage(named: self.retureBackImageKey((m?.weather)!))
                     self.setupFiveDayWeather(fList: (self.wModel?.future)!)
                 }
@@ -77,6 +84,7 @@ class ViewController: UIViewController {
 
             }) { (error) in
                 self.view.makeToast(error as? String)
+                self.sam.signal()
             }
         }
        
@@ -95,8 +103,9 @@ class ViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.todayHistory.reloadData()
                 }
+                self.sam.signal()
             }) { (error) in
-                
+                self.sam.signal()
             }
         }
         
@@ -147,11 +156,12 @@ class ViewController: UIViewController {
         let sVC = segue.destination
         if sVC.classForCoder == AddressViewController.classForCoder() {
             let aVC = sVC as! AddressViewController
+            aVC.delegate = self
         }
     }
 }
 
-extension ViewController: UITableViewDelegate,UITableViewDataSource {
+extension ViewController: UITableViewDelegate,UITableViewDataSource,ProjectDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return historyList.count
     }
@@ -172,5 +182,16 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource {
         tVC.uid = m.id
         self.navigationController?.pushViewController(tVC, animated: true)
     }
-    
+    func didSelectCity(city: String) {
+        
+        self.city = city
+        if self.city.hasSuffix("市") {
+            let i = self.city.index(of: "市")
+            let obj = self.city[city.startIndex..<i!]
+            self.city = String(obj)
+            print(self.city)
+        }
+        self.leftItem.title = city
+        requestHttp()
+    }
 }
