@@ -12,4 +12,5 @@ target 'Weather' do
   pod 'SwiftyJSON', '~> 4.0'
   pod 'Toast-Swift', '~> 4.0.1'
   pod 'MJRefresh', '~> 3.1.15.7'
+  pod 'JPush'
 end

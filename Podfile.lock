@@ -1,6 +1,9 @@
 PODS:
   - Alamofire (4.8.1)
   - IQKeyboardManagerSwift (6.2.0)
+  - JCore (1.2.6)
+  - JPush (3.1.2):
+    - JCore (~> 1.2.6)
   - MJRefresh (3.1.15.7)
   - Moya (12.0.1):
     - Moya/Core (= 12.0.1)
@@ -18,6 +21,7 @@ PODS:
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift (~> 6.2.0)
+  - JPush
   - MJRefresh (~> 3.1.15.7)
   - Moya (~> 12.0.1)
   - SDWebImage
@@ -30,6 +34,8 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - IQKeyboardManagerSwift
+    - JCore
+    - JPush
     - MJRefresh
     - Moya
     - Result
@@ -42,6 +48,8 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
+  JCore: cae516dd2bf1a73b578ce6e1065abd49e709e0f7
+  JPush: d0cead70ba223a6a3b52749899ebda830dfbc49a
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
@@ -51,6 +59,6 @@ SPEC CHECKSUMS:
   Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
   UIColor_Hex_Swift: bc07fc197421ee896b9ed6dcfa2054b7fbf75145
 
-PODFILE CHECKSUM: ac4f072b3d85a94fd3aa1b51943b5eeef898a42f
+PODFILE CHECKSUM: 67cb3b9bee29de746246ea496c8979fd620037cf
 
 COCOAPODS: 1.6.0

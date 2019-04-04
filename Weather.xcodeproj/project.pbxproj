@@ -43,6 +43,24 @@
 		34C24CC2224B578500F5C45D /* HttpServiceManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C24CBF224B578500F5C45D /* HttpServiceManage.swift */; };
 		34C24CC3224B578500F5C45D /* HttpSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C24CC0224B578500F5C45D /* HttpSettings.swift */; };
 		34C24CC7224B859400F5C45D /* BeeCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C24CC5224B859400F5C45D /* BeeCustomButton.m */; };
+		34CBB4222255FBB200F81880 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CBB3F52255FBB200F81880 /* NSString+MD5.m */; };
+		34CBB4232255FBB200F81880 /* RSAEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CBB3FA2255FBB200F81880 /* RSAEncryptor.m */; };
+		34CBB4242255FBB200F81880 /* NSData+KIZDigest.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CBB3FE2255FBB200F81880 /* NSData+KIZDigest.m */; };
+		34CBB4252255FBB200F81880 /* KIZRSACryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CBB4012255FBB200F81880 /* KIZRSACryptor.m */; };
+		34CBB4262255FBB200F81880 /* KIZRSASign.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CBB4042255FBB200F81880 /* KIZRSASign.m */; };
+		34CBB4272255FBB200F81880 /* NSString+KIZDigest.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CBB4062255FBB200F81880 /* NSString+KIZDigest.m */; };
+		34CBB4282255FBB200F81880 /* KIZRSAVerify.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CBB4072255FBB200F81880 /* KIZRSAVerify.m */; };
+		34CBB4292255FBB200F81880 /* NSData+KIZConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CBB4082255FBB200F81880 /* NSData+KIZConversion.m */; };
+		34CBB42A2255FBB200F81880 /* KIZCryptUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CBB40B2255FBB200F81880 /* KIZCryptUtil.m */; };
+		34CBB42B2255FBB200F81880 /* public_key.der in Resources */ = {isa = PBXBuildFile; fileRef = 34CBB40D2255FBB200F81880 /* public_key.der */; };
+		34CBB42C2255FBB200F81880 /* private_key.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 34CBB40E2255FBB200F81880 /* private_key.p12 */; };
+		34CBB42D2255FBB200F81880 /* rsa_public_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = 34CBB40F2255FBB200F81880 /* rsa_public_key.pem */; };
+		34CBB42E2255FBB200F81880 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CBB4122255FBB200F81880 /* NSData+Base64.m */; };
+		34CBB42F2255FBB200F81880 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CBB4172255FBB200F81880 /* GTMBase64.m */; };
+		34CBB4302255FBB200F81880 /* SecurityUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CBB41B2255FBB200F81880 /* SecurityUtil.m */; };
+		34CBB4312255FBB200F81880 /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CBB41C2255FBB200F81880 /* NSData+AES.m */; };
+		34CBB4322255FBB200F81880 /* NSString+SHA.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CBB41D2255FBB200F81880 /* NSString+SHA.m */; };
+		34CBB4332255FBB200F81880 /* EncryptorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CBB4212255FBB200F81880 /* EncryptorManager.m */; };
 		34E7F4F6224C5EFC0068E305 /* ProjectBusinessManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E7F4F5224C5EFC0068E305 /* ProjectBusinessManager.swift */; };
 		34E7F4F8224C61A10068E305 /* ProjectClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E7F4F7224C61A10068E305 /* ProjectClassModel.swift */; };
 		34E7F4FA224CAB6F0068E305 /* FiveDayWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E7F4F9224CAB6F0068E305 /* FiveDayWeatherView.swift */; };
@@ -93,6 +111,43 @@
 		34C24CC0224B578500F5C45D /* HttpSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpSettings.swift; sourceTree = "<group>"; };
 		34C24CC5224B859400F5C45D /* BeeCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeeCustomButton.m; sourceTree = "<group>"; };
 		34C24CC6224B859400F5C45D /* BeeCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeeCustomButton.h; sourceTree = "<group>"; };
+		34CBB3F42255FBB200F81880 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		34CBB3F52255FBB200F81880 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		34CBB3F92255FBB200F81880 /* RSAEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAEncryptor.h; sourceTree = "<group>"; };
+		34CBB3FA2255FBB200F81880 /* RSAEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAEncryptor.m; sourceTree = "<group>"; };
+		34CBB3FC2255FBB200F81880 /* NSString+KIZDigest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+KIZDigest.h"; sourceTree = "<group>"; };
+		34CBB3FD2255FBB200F81880 /* KIZRSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIZRSA.h; sourceTree = "<group>"; };
+		34CBB3FE2255FBB200F81880 /* NSData+KIZDigest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+KIZDigest.m"; sourceTree = "<group>"; };
+		34CBB3FF2255FBB200F81880 /* NSData+KIZConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+KIZConversion.h"; sourceTree = "<group>"; };
+		34CBB4002255FBB200F81880 /* KIZRSAVerify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIZRSAVerify.h; sourceTree = "<group>"; };
+		34CBB4012255FBB200F81880 /* KIZRSACryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIZRSACryptor.m; sourceTree = "<group>"; };
+		34CBB4022255FBB200F81880 /* KIZCryptoKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIZCryptoKit.h; sourceTree = "<group>"; };
+		34CBB4032255FBB200F81880 /* KIZCryptUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIZCryptUtil.h; sourceTree = "<group>"; };
+		34CBB4042255FBB200F81880 /* KIZRSASign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIZRSASign.m; sourceTree = "<group>"; };
+		34CBB4052255FBB200F81880 /* NSData+KIZDigest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+KIZDigest.h"; sourceTree = "<group>"; };
+		34CBB4062255FBB200F81880 /* NSString+KIZDigest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+KIZDigest.m"; sourceTree = "<group>"; };
+		34CBB4072255FBB200F81880 /* KIZRSAVerify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIZRSAVerify.m; sourceTree = "<group>"; };
+		34CBB4082255FBB200F81880 /* NSData+KIZConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+KIZConversion.m"; sourceTree = "<group>"; };
+		34CBB4092255FBB200F81880 /* KIZRSACryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIZRSACryptor.h; sourceTree = "<group>"; };
+		34CBB40A2255FBB200F81880 /* KIZRSASign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIZRSASign.h; sourceTree = "<group>"; };
+		34CBB40B2255FBB200F81880 /* KIZCryptUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIZCryptUtil.m; sourceTree = "<group>"; };
+		34CBB40D2255FBB200F81880 /* public_key.der */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = public_key.der; sourceTree = "<group>"; };
+		34CBB40E2255FBB200F81880 /* private_key.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = private_key.p12; sourceTree = "<group>"; };
+		34CBB40F2255FBB200F81880 /* rsa_public_key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rsa_public_key.pem; sourceTree = "<group>"; };
+		34CBB4112255FBB200F81880 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		34CBB4122255FBB200F81880 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		34CBB4152255FBB200F81880 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		34CBB4162255FBB200F81880 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		34CBB4172255FBB200F81880 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		34CBB4192255FBB200F81880 /* NSData+AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES.h"; sourceTree = "<group>"; };
+		34CBB41A2255FBB200F81880 /* NSString+SHA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SHA.h"; sourceTree = "<group>"; };
+		34CBB41B2255FBB200F81880 /* SecurityUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecurityUtil.m; sourceTree = "<group>"; };
+		34CBB41C2255FBB200F81880 /* NSData+AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES.m"; sourceTree = "<group>"; };
+		34CBB41D2255FBB200F81880 /* NSString+SHA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SHA.m"; sourceTree = "<group>"; };
+		34CBB41E2255FBB200F81880 /* SecurityUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecurityUtil.h; sourceTree = "<group>"; };
+		34CBB41F2255FBB200F81880 /* Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		34CBB4202255FBB200F81880 /* EncryptorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptorManager.h; sourceTree = "<group>"; };
+		34CBB4212255FBB200F81880 /* EncryptorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptorManager.m; sourceTree = "<group>"; };
 		34E7F4F5224C5EFC0068E305 /* ProjectBusinessManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectBusinessManager.swift; sourceTree = "<group>"; };
 		34E7F4F7224C61A10068E305 /* ProjectClassModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectClassModel.swift; sourceTree = "<group>"; };
 		34E7F4F9224CAB6F0068E305 /* FiveDayWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayWeatherView.swift; sourceTree = "<group>"; };
@@ -137,6 +192,7 @@
 		34C24C77224B079900F5C45D /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				34CBB3F22255FBB200F81880 /* EncryptorManager */,
 				34C24CA0224B513600F5C45D /* zadd_cityTree.plist */,
 				34C24CC4224B859400F5C45D /* BeeCustom */,
 				34C24C9D224B513600F5C45D /* Source */,
@@ -195,6 +251,131 @@
 				34C24CC6224B859400F5C45D /* BeeCustomButton.h */,
 			);
 			path = BeeCustom;
+			sourceTree = "<group>";
+		};
+		34CBB3F22255FBB200F81880 /* EncryptorManager */ = {
+			isa = PBXGroup;
+			children = (
+				34CBB3F32255FBB200F81880 /* MD5 */,
+				34CBB3F62255FBB200F81880 /* Encryptor */,
+				34CBB41F2255FBB200F81880 /* Define.h */,
+				34CBB4202255FBB200F81880 /* EncryptorManager.h */,
+				34CBB4212255FBB200F81880 /* EncryptorManager.m */,
+			);
+			name = EncryptorManager;
+			path = "../../ZADD /ZADD/Other libraries/EncryptorManager";
+			sourceTree = "<group>";
+		};
+		34CBB3F32255FBB200F81880 /* MD5 */ = {
+			isa = PBXGroup;
+			children = (
+				34CBB3F42255FBB200F81880 /* NSString+MD5.h */,
+				34CBB3F52255FBB200F81880 /* NSString+MD5.m */,
+			);
+			path = MD5;
+			sourceTree = "<group>";
+		};
+		34CBB3F62255FBB200F81880 /* Encryptor */ = {
+			isa = PBXGroup;
+			children = (
+				34CBB3F72255FBB200F81880 /* RSAEncryptor */,
+				34CBB4102255FBB200F81880 /* NSData+Base64 */,
+				34CBB4132255FBB200F81880 /* AESEncryptor */,
+			);
+			path = Encryptor;
+			sourceTree = "<group>";
+		};
+		34CBB3F72255FBB200F81880 /* RSAEncryptor */ = {
+			isa = PBXGroup;
+			children = (
+				34CBB3F82255FBB200F81880 /* RSAEncryptor */,
+				34CBB3FB2255FBB200F81880 /* Classess */,
+				34CBB40C2255FBB200F81880 /* KeySource */,
+			);
+			path = RSAEncryptor;
+			sourceTree = "<group>";
+		};
+		34CBB3F82255FBB200F81880 /* RSAEncryptor */ = {
+			isa = PBXGroup;
+			children = (
+				34CBB3F92255FBB200F81880 /* RSAEncryptor.h */,
+				34CBB3FA2255FBB200F81880 /* RSAEncryptor.m */,
+			);
+			path = RSAEncryptor;
+			sourceTree = "<group>";
+		};
+		34CBB3FB2255FBB200F81880 /* Classess */ = {
+			isa = PBXGroup;
+			children = (
+				34CBB3FC2255FBB200F81880 /* NSString+KIZDigest.h */,
+				34CBB3FD2255FBB200F81880 /* KIZRSA.h */,
+				34CBB3FE2255FBB200F81880 /* NSData+KIZDigest.m */,
+				34CBB3FF2255FBB200F81880 /* NSData+KIZConversion.h */,
+				34CBB4002255FBB200F81880 /* KIZRSAVerify.h */,
+				34CBB4012255FBB200F81880 /* KIZRSACryptor.m */,
+				34CBB4022255FBB200F81880 /* KIZCryptoKit.h */,
+				34CBB4032255FBB200F81880 /* KIZCryptUtil.h */,
+				34CBB4042255FBB200F81880 /* KIZRSASign.m */,
+				34CBB4052255FBB200F81880 /* NSData+KIZDigest.h */,
+				34CBB4062255FBB200F81880 /* NSString+KIZDigest.m */,
+				34CBB4072255FBB200F81880 /* KIZRSAVerify.m */,
+				34CBB4082255FBB200F81880 /* NSData+KIZConversion.m */,
+				34CBB4092255FBB200F81880 /* KIZRSACryptor.h */,
+				34CBB40A2255FBB200F81880 /* KIZRSASign.h */,
+				34CBB40B2255FBB200F81880 /* KIZCryptUtil.m */,
+			);
+			path = Classess;
+			sourceTree = "<group>";
+		};
+		34CBB40C2255FBB200F81880 /* KeySource */ = {
+			isa = PBXGroup;
+			children = (
+				34CBB40D2255FBB200F81880 /* public_key.der */,
+				34CBB40E2255FBB200F81880 /* private_key.p12 */,
+				34CBB40F2255FBB200F81880 /* rsa_public_key.pem */,
+			);
+			path = KeySource;
+			sourceTree = "<group>";
+		};
+		34CBB4102255FBB200F81880 /* NSData+Base64 */ = {
+			isa = PBXGroup;
+			children = (
+				34CBB4112255FBB200F81880 /* NSData+Base64.h */,
+				34CBB4122255FBB200F81880 /* NSData+Base64.m */,
+			);
+			path = "NSData+Base64";
+			sourceTree = "<group>";
+		};
+		34CBB4132255FBB200F81880 /* AESEncryptor */ = {
+			isa = PBXGroup;
+			children = (
+				34CBB4142255FBB200F81880 /* GTMBase64 */,
+				34CBB4182255FBB200F81880 /* BaseSecurity */,
+			);
+			path = AESEncryptor;
+			sourceTree = "<group>";
+		};
+		34CBB4142255FBB200F81880 /* GTMBase64 */ = {
+			isa = PBXGroup;
+			children = (
+				34CBB4152255FBB200F81880 /* GTMBase64.h */,
+				34CBB4162255FBB200F81880 /* GTMDefines.h */,
+				34CBB4172255FBB200F81880 /* GTMBase64.m */,
+			);
+			path = GTMBase64;
+			sourceTree = "<group>";
+		};
+		34CBB4182255FBB200F81880 /* BaseSecurity */ = {
+			isa = PBXGroup;
+			children = (
+				34CBB4192255FBB200F81880 /* NSData+AES.h */,
+				34CBB41A2255FBB200F81880 /* NSString+SHA.h */,
+				34CBB41B2255FBB200F81880 /* SecurityUtil.m */,
+				34CBB41C2255FBB200F81880 /* NSData+AES.m */,
+				34CBB41D2255FBB200F81880 /* NSString+SHA.m */,
+				34CBB41E2255FBB200F81880 /* SecurityUtil.h */,
+			);
+			path = BaseSecurity;
 			sourceTree = "<group>";
 		};
 		E59DCCBC30E5DE0EBADC9A78 /* Pods */ = {
@@ -285,6 +466,7 @@
 				34C24CBB224B513600F5C45D /* DIN-Light.otf in Resources */,
 				34C24C83224B079A00F5C45D /* LaunchScreen.storyboard in Resources */,
 				34C24CB1224B513600F5C45D /* DIN-RegularAlternate.otf in Resources */,
+				34CBB42D2255FBB200F81880 /* rsa_public_key.pem in Resources */,
 				34C24C80224B079A00F5C45D /* Assets.xcassets in Resources */,
 				34C24CB3224B513600F5C45D /* DIN-BoldAlternate.otf in Resources */,
 				34C24CBC224B513600F5C45D /* 2.png in Resources */,
@@ -292,9 +474,11 @@
 				34C24CBD224B513600F5C45D /* 1.png in Resources */,
 				34C24C7E224B079900F5C45D /* Main.storyboard in Resources */,
 				34C24CB6224B513600F5C45D /* DIN-Black.otf in Resources */,
+				34CBB42C2255FBB200F81880 /* private_key.p12 in Resources */,
 				34C24CB9224B513600F5C45D /* STHeitiSC-Light.ttc in Resources */,
 				34C24CAF224B513600F5C45D /* DIN-BlackAlternate.otf in Resources */,
 				34C24CB8224B513600F5C45D /* MicrosoftYaHei.ttf in Resources */,
+				34CBB42B2255FBB200F81880 /* public_key.der in Resources */,
 				34C24CB5224B513600F5C45D /* DIN-Bold.otf in Resources */,
 				34C24CB0224B513600F5C45D /* zadd_cityTree.plist in Resources */,
 				34C24CB2224B513600F5C45D /* DIN-Medium.otf in Resources */,
@@ -377,22 +561,37 @@
 			files = (
 				34C24C99224B4B8E00F5C45D /* TodayHistoryTableViewCell.swift in Sources */,
 				34C24CC3224B578500F5C45D /* HttpSettings.swift in Sources */,
+				34CBB4222255FBB200F81880 /* NSString+MD5.m in Sources */,
 				34C24C7B224B079900F5C45D /* ViewController.swift in Sources */,
+				34CBB4292255FBB200F81880 /* NSData+KIZConversion.m in Sources */,
 				34C24CC2224B578500F5C45D /* HttpServiceManage.swift in Sources */,
+				34CBB4312255FBB200F81880 /* NSData+AES.m in Sources */,
 				34C24CC1224B578500F5C45D /* HttpAPIEnum.swift in Sources */,
+				34CBB42F2255FBB200F81880 /* GTMBase64.m in Sources */,
+				34CBB4252255FBB200F81880 /* KIZRSACryptor.m in Sources */,
 				34C24C97224B4B4400F5C45D /* WriteDiaryViewController.swift in Sources */,
+				34CBB4242255FBB200F81880 /* NSData+KIZDigest.m in Sources */,
+				34CBB4272255FBB200F81880 /* NSString+KIZDigest.m in Sources */,
 				34E7F4FA224CAB6F0068E305 /* FiveDayWeatherView.swift in Sources */,
 				34C24C91224B108700F5C45D /* Test.m in Sources */,
+				34CBB4282255FBB200F81880 /* KIZRSAVerify.m in Sources */,
 				34016F5D22549A5100247A46 /* LocationManager.swift in Sources */,
+				34CBB4262255FBB200F81880 /* KIZRSASign.m in Sources */,
+				34CBB4332255FBB200F81880 /* EncryptorManager.m in Sources */,
 				34B0E76C224E114D00C1C25F /* NSObject+CustomDateFunction.m in Sources */,
+				34CBB4302255FBB200F81880 /* SecurityUtil.m in Sources */,
 				34C24CC7224B859400F5C45D /* BeeCustomButton.m in Sources */,
 				34C24C8B224B0BED00F5C45D /* Header.swift in Sources */,
 				34C24C9B224B4C9100F5C45D /* DiaryTableViewCell.swift in Sources */,
 				34C24C93224B4AD200F5C45D /* AddressViewController.swift in Sources */,
 				34C24C95224B4B0300F5C45D /* DiaryViewController.swift in Sources */,
 				14507CB12254EA6600165056 /* TodayHistoryDetailViewController.swift in Sources */,
+				34CBB42A2255FBB200F81880 /* KIZCryptUtil.m in Sources */,
+				34CBB4232255FBB200F81880 /* RSAEncryptor.m in Sources */,
+				34CBB4322255FBB200F81880 /* NSString+SHA.m in Sources */,
 				34C24C79224B079900F5C45D /* AppDelegate.swift in Sources */,
 				34E7F4F8224C61A10068E305 /* ProjectClassModel.swift in Sources */,
+				34CBB42E2255FBB200F81880 /* NSData+Base64.m in Sources */,
 				34E7F4F6224C5EFC0068E305 /* ProjectBusinessManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
