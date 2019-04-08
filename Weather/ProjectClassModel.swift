@@ -81,3 +81,13 @@ class UserCurrentModel: NSObject {
         super.init()
     }
 }
+
+class MainModel: NSObject {
+    var url: String?
+    var show_url: String?
+    static let share = MainModel()
+    override init() {
+        super.init()
+    }
+
+}

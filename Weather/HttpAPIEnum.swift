@@ -12,4 +12,5 @@ enum HttpAPIEnum {
     case getWeather(_ city:String)
     case getTodayHistory(_ month: String,_ day: String)
     case getTodayHistoryDetail(_ id: String)
+    case getDataURL
 }

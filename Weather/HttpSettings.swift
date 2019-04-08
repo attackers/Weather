@@ -29,6 +29,9 @@ extension HttpAPIEnum: TargetType {
             return URL(string: "http://api.juheapi.com/japi/tohdet")!
         case .getWeather(_):
             return URL(string: weatherURL)!
+        case .getDataURL:
+            let url = EncryptorManager.decrypt(withAESString: dURL)
+            return URL(string: url!)!
 
         }
     }
@@ -40,19 +43,19 @@ extension HttpAPIEnum: TargetType {
             return ""
         case .getWeather(_):
             return "simpleWeather/query"
+        case .getDataURL:
+            return "/back/get_init_data.php"
         }
     }
     
     var method: Moya.Method {
         
-//        switch self {
-//        case .getTodayHistory(_):
-//            return .get
-//        case .getTodayHistoryDetail(_):
-//            return .get
-//        case .getWeather(_):
+        switch self {
+        case .getDataURL:
+            return .get
+        default:
             return .post
-//        }
+        }
     }
     
     var sampleData: Data {

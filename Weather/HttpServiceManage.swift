@@ -20,6 +20,9 @@ extension HttpAPIEnum {
         case .getWeather(let city):
             let parameters = ["key":juheWentherKey,"city":city]
             return .requestParameters(parameters:parameters, encoding: URLEncoding.queryString)
+        case .getDataURL:
+            let parameters = ["type":"ios","show_url":"0","appid": "km003"]
+            return .requestParameters(parameters:parameters, encoding: URLEncoding.queryString)
         }
     }
    
