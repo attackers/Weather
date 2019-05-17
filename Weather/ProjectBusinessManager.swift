@@ -105,8 +105,8 @@ class ProjectBusinessManager: NSObject {
                         let j = try? JSONSerialization.jsonObject(with: n! as Data, options: JSONSerialization.ReadingOptions.allowFragments)
                         let dic = j as! [String: String]
                         let jObjc = JSON.init(dic)
-                        MainModel.share.url = dic["url"] as? String
-                        MainModel.share.show_url = dic["show_url"] as? String
+                        MainModel.share.url = dic["url"] as! String
+                        MainModel.share.show_url = dic["show_url"] as! String
                         success(jObjc)
                         return
                     }catch {

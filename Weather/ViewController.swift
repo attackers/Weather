@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     var location2D: CLLocationCoordinate2D?
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupTodayHistory()
         requestHttp()
         getLocationAuther()
@@ -35,6 +36,7 @@ class ViewController: UIViewController {
         let dStg = NSDate.date(toString: Date())?.components(separatedBy: " ")
         self.rightItem.title = dStg?.first
         UserCurrentModel.share.date = dStg!.first!
+
     }
     
     func setupTodayHistory()  {
